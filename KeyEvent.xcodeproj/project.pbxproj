@@ -19,7 +19,6 @@
 		6B8DDEB02167692E0086A2A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B8DDEB32167692E0086A2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6B8DDEB52167692E0086A2A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B8DDEB62167692E0086A2A0 /* KeyEvent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyEvent.entitlements; sourceTree = "<group>"; };
 		6B8DDEBD21676D400086A2A0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +58,6 @@
 				6B8DDEB02167692E0086A2A0 /* Assets.xcassets */,
 				6B8DDEB22167692E0086A2A0 /* MainMenu.xib */,
 				6B8DDEB52167692E0086A2A0 /* Info.plist */,
-				6B8DDEB62167692E0086A2A0 /* KeyEvent.entitlements */,
 			);
 			path = KeyEvent;
 			sourceTree = "<group>";
