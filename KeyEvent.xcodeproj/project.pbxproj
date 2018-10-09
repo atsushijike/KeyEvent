@@ -10,6 +10,7 @@
 		6B8DDEAF216769290086A2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DDEAE216769290086A2A0 /* AppDelegate.swift */; };
 		6B8DDEB12167692E0086A2A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B8DDEB02167692E0086A2A0 /* Assets.xcassets */; };
 		6B8DDEB42167692E0086A2A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8DDEB22167692E0086A2A0 /* MainMenu.xib */; };
+		6B8DDEBE21676D400086A2A0 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8DDEBD21676D400086A2A0 /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6B8DDEB32167692E0086A2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6B8DDEB52167692E0086A2A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8DDEB62167692E0086A2A0 /* KeyEvent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyEvent.entitlements; sourceTree = "<group>"; };
+		6B8DDEBD21676D400086A2A0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8DDEBE21676D400086A2A0 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +40,7 @@
 			children = (
 				6B8DDEAD216769290086A2A0 /* KeyEvent */,
 				6B8DDEAC216769290086A2A0 /* Products */,
+				6B8DDEBC21676D400086A2A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +64,14 @@
 			path = KeyEvent;
 			sourceTree = "<group>";
 		};
+		6B8DDEBC21676D400086A2A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B8DDEBD21676D400086A2A0 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -70,6 +82,7 @@
 				6B8DDEA7216769290086A2A0 /* Sources */,
 				6B8DDEA8216769290086A2A0 /* Frameworks */,
 				6B8DDEA9216769290086A2A0 /* Resources */,
+				6B8DDEBF21676D460086A2A0 /* Run Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -92,6 +105,11 @@
 				TargetAttributes = {
 					6B8DDEAA216769290086A2A0 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -124,6 +142,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B8DDEBF21676D460086A2A0 /* Run Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/SnapKit.framework",
+			);
+			name = "Run Carthage Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B8DDEA7216769290086A2A0 /* Sources */ = {
@@ -265,9 +301,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KeyEvent/KeyEvent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = KeyEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -283,9 +322,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KeyEvent/KeyEvent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = KeyEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
